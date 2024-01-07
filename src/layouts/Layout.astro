@@ -1,51 +1,221 @@
 ---
+import Topbar from '../components/Topbar.astro'
+import Footer from '../components/Footer.astro'
 interface Props {
-	title: string;
+    title: string
 }
 
-const { title } = Astro.props;
+const { title } = Astro.props
 ---
 
 <!doctype html>
-<html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="description" content="Astro description" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>{title}</title>
-	</head>
-	<body>
-		<slot />
-	</body>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="description" content="Astro description" />
+        <meta name="viewport" content="width=device-width" />
+        <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+        <meta name="generator" content={Astro.generator} />
+        <title>{title}</title>
+
+        <!-- Favicons-->
+        <link rel="shortcut icon" href="/Taurus/assets/img/favicon.png" />
+        <link
+            rel="apple-touch-icon"
+            href="/Taurus/assets/img/apple-touch-icon.png"
+        />
+        <link
+            rel="apple-touch-icon"
+            sizes="72x72"
+            href="/Taurus/assets/img/apple-touch-icon-72x72.png"
+        />
+        <link
+            rel="apple-touch-icon"
+            sizes="114x114"
+            href="/Taurus/assets/img/apple-touch-icon-114x114.png"
+        />
+
+        <link
+            href="/Taurus/assets/css/css.css?family=Poppins:400,500,600%7cPlayfair+Display:400i"
+            rel="stylesheet"
+        />
+        <link rel="stylesheet" href="/Taurus/assets/css/all.css" />
+
+        <!-- Plugins-->
+        <link rel="stylesheet" href="/Taurus/assets/css/plugins.min.css" />
+
+        <!-- Template core CSS-->
+        <link rel="stylesheet" href="/Taurus/assets/css/template.css" />
+        <link rel="stylesheet" href="/Taurus/assets/css/style.css" />
+    </head>
+    <body>
+        <!-- Preloader-->
+        <div class="page-loader">
+            <div class="page-loader-inner">
+                <div class="spinner">
+                    <div class="double-bounce1"></div>
+                    <div class="double-bounce2"></div>
+                </div>
+            </div>
+        </div>
+        <!-- Preloader end-->
+        <!-- Header-->
+        <Topbar />
+        <!-- Header end-->
+        <!-- Wrapper-->
+        <div class="wrapper">
+            <slot />
+            <Footer />
+        </div>
+        <!-- Wrapper end-->
+        <!-- Off canvas-->
+        <div class="off-canvas-sidebar">
+            <div
+                class="off-canvas-sidebar-wrapper"
+                style="margin-right: -17px;"
+            >
+                <div class="off-canvas-header">
+                    <a class="off-canvas-close" href="#"
+                        ><span class="ti-close"></span></a
+                    >
+                </div>
+                <div class="off-canvas-content">
+                    <!-- Text widget-->
+                    <aside class="widget widget-text">
+                        <div class="textwidget">
+                            <p class="text-center">
+                                <img
+                                    src="/Taurus/assets/img/logo-light-2.png"
+                                    alt=""
+                                    width="80px"
+                                />
+                            </p>
+                            <p class="text-center">
+                                See how users experience your website in
+                                realtime to see changes.
+                            </p>
+                        </div>
+                    </aside>
+                    <!-- Recent portfolio widget-->
+                    <aside class="widget widget-recent-works">
+                        <ul>
+                            <li>
+                                <a href=""
+                                    ><img
+                                        src="/Taurus/assets/img/widgets/1.jpg"
+                                        alt=""
+                                    /></a
+                                >
+                            </li>
+                            <li>
+                                <a href="#"
+                                    ><img
+                                        src="/Taurus/assets/img/widgets/2.jpg"
+                                        alt=""
+                                    /></a
+                                >
+                            </li>
+                            <li>
+                                <a href="#"
+                                    ><img
+                                        src="/Taurus/assets/img/widgets/3.jpg"
+                                        alt=""
+                                    /></a
+                                >
+                            </li>
+                            <li>
+                                <a href="#"
+                                    ><img
+                                        src="/Taurus/assets/img/widgets/4.jpg"
+                                        alt=""
+                                    /></a
+                                >
+                            </li>
+                            <li>
+                                <a href="#"
+                                    ><img
+                                        src="/Taurus/assets/img/widgets/5.jpg"
+                                        alt=""
+                                    /></a
+                                >
+                            </li>
+                            <li>
+                                <a href="#"
+                                    ><img
+                                        src="/Taurus/assets/img/widgets/6.jpg"
+                                        alt=""
+                                    /></a
+                                >
+                            </li>
+                            <li>
+                                <a href="#"
+                                    ><img
+                                        src="/Taurus/assets/img/widgets/7.jpg"
+                                        alt=""
+                                    /></a
+                                >
+                            </li>
+                            <li>
+                                <a href="#"
+                                    ><img
+                                        src="/Taurus/assets/img/widgets/8.jpg"
+                                        alt=""
+                                    /></a
+                                >
+                            </li>
+                            <li>
+                                <a href="#"
+                                    ><img
+                                        src="/Taurus/assets/img/widgets/9.jpg"
+                                        alt=""
+                                    /></a
+                                >
+                            </li>
+                        </ul>
+                    </aside>
+                    <!-- Social Icons-->
+                    <ul class="social-icons text-center">
+                        <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                        <li>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fab fa-pinterest-p"></i></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- To top button-->
+        <a class="scroll-top" href="#top"><i class="fas fa-angle-up"></i></a>
+        <!-- Javascript -->
+        <script is:inline src="/Taurus/assets/js/custom/jquery.min.js"></script>
+        <script is:inline src="/Taurus/assets/js/custom/popper.min.js"></script>
+        <script is:inline src="/Taurus/assets/js/bootstrap/bootstrap.min.js"
+        ></script>
+        <script is:inline src="/Taurus/assets/js/custom/plugins.min.js"
+        ></script>
+        <script is:inline src="/Taurus/assets/js/custom/custom.min.js"></script>
+    </body>
 </html>
-<style is:global>
-	:root {
-		--accent: 136, 58, 234;
-		--accent-light: 224, 204, 250;
-		--accent-dark: 49, 10, 101;
-		--accent-gradient: linear-gradient(
-			45deg,
-			rgb(var(--accent)),
-			rgb(var(--accent-light)) 30%,
-			white 60%
-		);
-	}
-	html {
-		font-family: system-ui, sans-serif;
-		background: #13151a;
-		background-size: 224px;
-	}
-	code {
-		font-family:
-			Menlo,
-			Monaco,
-			Lucida Console,
-			Liberation Mono,
-			DejaVu Sans Mono,
-			Bitstream Vera Sans Mono,
-			Courier New,
-			monospace;
-	}
+
+<style is:global id="fit-vids-style">
+    .fluid-width-video-wrapper {
+        width: 100%;
+        position: relative;
+        padding: 0;
+    }
+
+    .fluid-width-video-wrapper iframe,
+    .fluid-width-video-wrapper object,
+    .fluid-width-video-wrapper embed {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
 </style>
